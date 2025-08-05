@@ -27,33 +27,33 @@ public class Jdbc_Test {
 				System.out.println("Inserted "+rows+" rows");
 			}
 			
-			String qry="select * from students";
-			try(Statement st=con.createStatement()){
-				
-				ResultSet rs=st.executeQuery(qry);
-				
-				while(rs.next()) {
-					System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
-				}
-			}
-			
-			String qry="update students set age=? where id=?";
-			try(PreparedStatement ps=con.prepareStatement(qry)){
-				
-				ps.setInt(1, 28);
-				ps.setInt(2, 2);
-				int rows=ps.executeUpdate();
-				
-				System.out.println("Updated "+rows);
-			}
-			
-			String qry="delete from students where id=?";
-			
-			try(PreparedStatement ps=con.prepareStatement(qry)){
-				ps.setInt(1, 2);
-				ps.execute();
-				System.out.println("deleted successfully");
-			}
+//			String qry="select * from students";
+//			try(Statement st=con.createStatement()){
+//				
+//				ResultSet rs=st.executeQuery(qry);
+//				
+//				while(rs.next()) {
+//					System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getInt(3));
+//				}
+//			}
+//			
+//			String qry="update students set age=? where id=?";
+//			try(PreparedStatement ps=con.prepareStatement(qry)){
+//				
+//				ps.setInt(1, 28);
+//				ps.setInt(2, 2);
+//				int rows=ps.executeUpdate();
+//				
+//				System.out.println("Updated "+rows);
+//			}
+//			
+//			String qry="delete from students where id=?";
+//			
+//			try(PreparedStatement ps=con.prepareStatement(qry)){
+//				ps.setInt(1, 2);
+//				ps.execute();
+//				System.out.println("deleted successfully");
+//			}
 			
 			
 			
