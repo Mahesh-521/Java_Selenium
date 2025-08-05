@@ -1,5 +1,6 @@
 package lab2;
 
+//public abstract class Account
 public class Account {
 	private static long accCounter = 1000;
 	protected long accNum = 0;
@@ -59,7 +60,7 @@ public class Account {
 		}
 	}
 	
-//	public abstract boolean withdraw(double amount);
+//	public abstract void withdraw(double amount);
 
 	public String toString() {
 		return "Account{" + "accNum=" + accNum + ", accHolder=" + accHolder + ", balance=" + balance + '}';

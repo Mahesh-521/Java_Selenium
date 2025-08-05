@@ -12,7 +12,7 @@ public class SavingsAccount extends Account {
 	}
 
 	@Override
-	void withdraw(double amount) {
+	public void withdraw(double amount) {
 		
 		if (amount > 0 && (balance - amount) >= MIN_BALANCE) {
             balance -= amount;
