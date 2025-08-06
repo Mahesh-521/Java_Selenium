@@ -1,6 +1,6 @@
 package lab4to10;
 
-import lab4to10.Lab8.Gender;
+import lab3.Lab3_1NameException;
 
 public class Person {
 	
@@ -29,7 +29,10 @@ public class Person {
 	}
 	
 	
-	public Person(String firstName, String lastName, char gender) {
+	public Person(String firstName, String lastName, char gender) throws Lab3_1NameException {
+		if(firstName==null || firstName.trim().isEmpty() || lastName==null || lastName.trim().isEmpty()) {
+			throw new Lab3_1NameException("First name and last name should not empty");
+		}
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;

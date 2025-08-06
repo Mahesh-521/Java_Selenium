@@ -1,10 +1,15 @@
 package lab2;
 
+import lab3.Lab3_2AgeException;
+
 public class Person {
 	private String name;
 	private int age;
 	
 	public Person(String name, int age) {
+		if(age<=15) {
+			throw new Lab3_2AgeException("Age must be above 15");
+		}
         this.name = name;
         this.age = age;
     }
