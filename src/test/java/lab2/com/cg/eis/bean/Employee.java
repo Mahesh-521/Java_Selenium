@@ -2,7 +2,7 @@ package lab2.com.cg.eis.bean;
 
 import lab3.com.cg.eis.exception.Lab3_3EmployeeException;
 
-public class Employee {
+public class Employee  {
 
 	private int id;
 	private String name;
@@ -61,5 +61,11 @@ public class Employee {
 		this.insuranceScheme = insuranceScheme;
 	}
 
+	@Override
+	public String toString() {
+		return id + "," + name + "," + salary + "," + designation;
+	}
+
+	
 	
 }
