@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite" parallel="tests" thread-count="2">
+  <test thread-count="5" name="Test1">
+    <classes>
+      <class name="seleniumpack1.TC0014"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="Test2">
+    <classes>
+      <class name="seleniumpack1.TC0015"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
