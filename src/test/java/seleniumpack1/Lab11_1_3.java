@@ -19,18 +19,16 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Lab8_3 {
+public class Lab11_1_3 {
 	WebDriver driver;
 
 	@Test
 	public void f() {
-		
-		driver.findElement(By.linkText("Desktops")).click();
-		driver.findElement(By.linkText("Mac (1)")).click();
-		Select sort=new Select(driver.findElement(By.id("input-sort")));
-		sort.selectByVisibleText("Name (A - Z)");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/div/div/div[2]/div[2]/button[1]/span")).click();
+		Lab11_1_Locators_POM lp=new Lab11_1_Locators_POM(driver);
+		lp.clickDesktop();
+		lp.clickMac();
+		lp.selectDropDown();
+		lp.addCart();
 	}
 
 	@BeforeMethod

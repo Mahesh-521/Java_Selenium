@@ -18,16 +18,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TC0013_TestNG {
 	WebDriver driver;
+
 	@Test(dataProvider = "dp")
 	public void f(String username, String password) throws InterruptedException {
 		String title = driver.getTitle();
 		System.out.println("The Title is:" + title);
 		Thread.sleep(3000);
+		Login_pageobject obj = new Login_pageobject(driver);
+		obj.enterusername(username);
+		obj.enterpassword(password);
+		obj.clickonlogin();
+
 		// WebElement username=driver.findElement(By.name("username"));
 		// username.sendKeys("Admin");
-		driver.findElement(By.name("username")).sendKeys(username);
-		driver.findElement(By.name("password")).sendKeys(password);
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+//		driver.findElement(By.name("username")).sendKeys(username);
+//		driver.findElement(By.name("password")).sendKeys(password);
+//		driver.findElement(By.xpath("//button[@type='submit']")).click();
 	}
 
 	@BeforeMethod
@@ -46,10 +52,7 @@ public class TC0013_TestNG {
 
 	@DataProvider
 	public Object[][] dp() {
-		return new Object[][] { 
-			new Object[] { "Admin", "admin123" }, 
-			new Object[] { "Pooja", "admin123" },
-			 };
+		return new Object[][] { new Object[] { "Admin", "admin123" }, new Object[] { "Pooja", "admin123" }, };
 	}
 
 	@BeforeClass
