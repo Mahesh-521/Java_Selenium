@@ -1,11 +1,9 @@
 package seleniumpack1;
 
-import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,9 +14,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Lab14 {
+public class Lab15 {
 	WebDriver driver;
 	String projectpath = System.getProperty("user.dir");
 
@@ -82,21 +83,22 @@ public class Lab14 {
 	}
 
 	@DataProvider
-	public Object[][] dp() throws IOException {
+	public Object[][] dp() throws IOException, CsvException {
 		
-		File file1 = new File(projectpath + "\\userdetails.xlsx");
-		FileInputStream fs = new FileInputStream(file1);
-		XSSFWorkbook workbook = new XSSFWorkbook(fs);
-		XSSFSheet worksheet = workbook.getSheetAt(0);
-		int rows = worksheet.getPhysicalNumberOfRows();
-		int col = worksheet.getRow(0).getPhysicalNumberOfCells();
-		System.out.println("Num of rows : " + rows);
-		String[][] data = new String[rows][6];
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < col; j++) {
-				data[i][j] = worksheet.getRow(i).getCell(j).toString();
-			}
+		String csvfile=projectpath+"\\userdetails.csv";
+		String[][] data = new String[2][6];
+		CSVReader csvReader=new CSVReader(new FileReader(csvfile));
+		List<String[]> data1=csvReader.readAll();
+		
+		for(int i=0;i<data1.size();i++) {
+			data[i][0]=data1.get(i)[0];
+			data[i][1]=data1.get(i)[1];
+			data[i][2]=data1.get(i)[2];
+			data[i][3]=data1.get(i)[3];
+			data[i][4]=data1.get(i)[4];
+			data[i][5]=data1.get(i)[5];
 		}
+		
 		return data;
 	}
 

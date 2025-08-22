@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="seleniumpack1.Lab12_Propertiesfile">
+      <class name="seleniumpack1.Lab15">
         <methods>
-          <include name="after"/>
-          <include name="before"/>
-          <include name="registerUserTest"/>
+          <include name="beforeMethod"/>
+          <include name="f" invocation-numbers="0 1"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- seleniumpack1.Lab12_Propertiesfile -->
+      </class> <!-- seleniumpack1.Lab15 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
