@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user>
+		<firstname>mahesh</firstname>
+		<lastname>mahi</lastname>
+		<email>anaskaks@gmail.com</email>
+		<telephone>216281827</telephone>
+		<password>mahi123</password>
+		<confirmpassword>mahi123</confirmpassword>
+	</user>
+	<user>
+		<firstname>suresh</firstname>
+		<lastname>trainer</lastname>
+		<email>suriasnas@gmail.com</email>
+		<telephone>217371928</telephone>
+		<password>suri1234</password>
+		<confirmpassword>suri1234</confirmpassword>
+	</user>
+</users>
