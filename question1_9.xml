@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.practice.Q1"/>
+      <class name="com.practice.Q2"/>
+      <class name="com.practice.Q3"/>
+      <class name="com.practice.Q4"/>
+      <class name="com.practice.Q5"/>
+      <class name="com.practice.Q6"/>
+      <class name="com.practice.Q7"/>
+      <class name="com.practice.Q8"/>
+      <class name="com.practice.Q9"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
